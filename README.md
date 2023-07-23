@@ -5,18 +5,16 @@ AQI calculator (using US EPA standards)
 ```` go
 func Test_Calculate_ReturnsAQI(t *testing.T) {
 
-	//	Arrange
+	//	Create our calculation helper
 	c := aqi.NewCalcServiceWithDefaults()
-	pollutionName := "pm2_5"
-	pollutionConcentration := float32(35.9) // for pm 2.5 this is in parts per million
-	wantAQI := 102
 
-	//	Act - Call Calculate with our pollution name and the concentration of pollution
-	result, _ := c.Calculate(pollutionName, pollutionConcentration)
+	// Call Calculate with our pollution name and the concentration of pollution
+	// For pm 2.5 particulate pollution this is in parts per million
+	result, _ := c.Calculate("pm2_5", 35.9)
 
-	//	Assert - EPA says that the AQI should be 102 for this pollutant in this case
-	if result != wantAQI {
-		t.Errorf("Calculate() got = %v, want %v", result, wantAQI)
+	//	EPA says that the AQI should be 102 for this pollutant in this case
+	if result != 102 {
+		t.Errorf("Calculate() got = %v, want %v", result, 102)
 	}
 }
 ````
