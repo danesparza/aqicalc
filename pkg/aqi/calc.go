@@ -6,8 +6,9 @@ import (
 )
 
 type PollutantInfo struct {
-	Name        string
-	Breakpoints []BreakPoint
+	Name            string
+	MolecularWeight float32
+	Breakpoints     []BreakPoint
 }
 
 type BreakPoint struct {
@@ -19,7 +20,7 @@ type BreakPoint struct {
 }
 
 type CalcService interface {
-	Calculate(pollutionType string, concentration float32) (int, error)
+	Calculate(pollutionName string, concentration float32) (int, error)
 }
 
 type calcService struct {
@@ -32,6 +33,14 @@ type calcService struct {
 // The map value should be a PollutantInfo struct
 func NewCalcService(pollutants map[string]PollutantInfo) CalcService {
 	return calcService{pollutants}
+}
+
+// NewCalcServiceWithDefaults returns a CalcService that
+// uses the pollutant breakpoints from the US EPA
+func NewCalcServiceWithDefaults() CalcService {
+	return calcService{
+		Pollutants: GetDefaultPollutantInfo(),
+	}
 }
 
 // Calculate returns the AQI for the passed pollutant name, given the passed pollution
