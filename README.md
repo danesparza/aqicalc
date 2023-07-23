@@ -1,4 +1,4 @@
-# aqicalc [![Build and release](https://github.com/danesparza/aqicalc/actions/workflows/release.yaml/badge.svg)](https://github.com/danesparza/aqicalc/actions/workflows/release.yaml)
+# aqicalc [![Build and test](https://github.com/danesparza/aqicalc/actions/workflows/release.yaml/badge.svg)](https://github.com/danesparza/aqicalc/actions/workflows/release.yaml)
 AQI calculator (using US EPA standards)
 
 [Link: US EPA Air Quality Index calculations](https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf)
