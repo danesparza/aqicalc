@@ -1,10 +1,11 @@
-# aqicalc
-AQI calculator (using US EPA standards)
+package aqi_test
 
-### Example
-```` go
+import (
+	"github.com/danesparza/aqicalc/pkg/aqi"
+	"testing"
+)
+
 func Test_Calculate_ReturnsAQI(t *testing.T) {
-
 	//	Arrange
 	c := aqi.NewCalcServiceWithDefaults()
 	pollutionName := "pm2_5"
@@ -19,4 +20,3 @@ func Test_Calculate_ReturnsAQI(t *testing.T) {
 		t.Errorf("Calculate() got = %v, want %v", result, wantAQI)
 	}
 }
-````
