@@ -1,6 +1,8 @@
 # aqicalc
 AQI calculator (using US EPA standards)
 
+[Link: US EPA Air Quality Index calculations](https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf)
+
 ### Example
 ```` go
 import (
