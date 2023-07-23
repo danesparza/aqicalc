@@ -1,9 +1,6 @@
-name: Build and release
+name: Build and test
 
 on: [push]
-
-env:
-  GITHUB_TOKEN: ${{secrets.GHR_TOKEN}}
 
 jobs:
   vulnerabilitycheck:
